@@ -8,24 +8,35 @@ public class Tester {
         printMenu();
         Deck deck = new Deck();
         Card temp;
+        Card temp2;
+        Card temp3;
+
+        deck.shuffleDeck();
+        deck.shuffleDeck();
+        deck.shuffleDeck();
+        deck.shuffleDeck();
+
         /*
-        for(int i = 0; i<52;i++){
-            temp = deck.drawCard();
-            System.out.println(temp.getNumber() + " " + temp.getSuit());
+        for(int i = deck.getSize(); i > 0;i--){
+        temp = deck.drawCard();
+        System.out.println(temp.getNumber() + " " + temp.getSuit());
         }
-*/
+        */
+
         temp = deck.drawCard();
         System.out.println(temp.getNumber() + " " + temp.getSuit()+"\n");
 
-        deck.shuffleDeck();
-        deck.shuffleDeck();
-        deck.shuffleDeck();
-        deck.shuffleDeck();
+        temp2 = deck.drawCard();
+        System.out.println(temp2.getNumber() + " " + temp2.getSuit()+"\n");
 
-        for(int i = deck.getSize(); i > 0;i--){
-            temp = deck.drawCard();
-            System.out.println(temp.getNumber() + " " + temp.getSuit());
-        }
+        temp3 = deck.drawCard();
+        System.out.println(temp3.getNumber() + " " + temp3.getSuit()+"\n");
+
+        deck.restockDeck();
+        System.out.print(deck.contains(temp));
+        System.out.print(deck.contains(temp2));
+        System.out.print(deck.contains(temp3));
+
 
 
     }

@@ -28,10 +28,6 @@ public class Card {
 
     }
 
-    public Card()
-    {
-        //TESTER CONSTRUCTOR
-    }
 
     public String getSuit() {
         return suit;

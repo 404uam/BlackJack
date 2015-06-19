@@ -7,15 +7,16 @@ import java.util.Stack;
 public class Deck {
 
     private Stack <Card> deck = new <Card> Stack();
+    private Stack <Card> burn = new <Card> Stack();
     private int DECK_SIZE = 52;
     private int SUIT_SIZE = 13;
     private int SUITS     = 4;
+    private int NUM_OF_DECKS = 6;
 
 
     public Deck()
     {
-
-        for(int j = 0; j < 1; j++) {
+        for(int j = 0; j < NUM_OF_DECKS; j++) {
             for (int i = 1; i <= SUITS; i++) {
                 for (int c = 1; c <= SUIT_SIZE; c++) {
                     Card temp = new Card(c, i);
@@ -28,9 +29,18 @@ public class Deck {
 
     public Card drawCard()
     {
-        return deck.pop();
+        Card temp = deck.pop();
+        burn.add(temp);             //Why am i burning the card right as I draw.. Good idea or no?
+        return temp;
     }
 
+    /**
+     * @name shuffleDeck
+     * @author Louis
+     *
+     * Takes a random number and for every card in the deck stack it will be added in a random location in the stack
+     * it is recommended that this is done more than once to ensure randomness .
+     */
     public void shuffleDeck()
     {
         Random rn = new Random();
@@ -41,14 +51,32 @@ public class Deck {
         }
     }
 
+    /**
+     * @name restockDeck
+     * @author Louis
+     * Takes all the cards in the stack which is the burn pile and adds them back to the main deck
+     * Then shuffles main deck
+     *
+     */
     public void restockDeck()
     {
-
+        for(int i = burn.size(); i > 0; i--)
+        {
+            deck.add(burn.pop());
+        }
+        shuffleDeck();
     }
 
+    // This function is for debugging / testing
     public int getSize()
     {
         return deck.size();
+    }
+
+    // This function is for debugging / testing
+    public boolean contains(Card e)
+    {
+        return deck.contains(e);
     }
 
 
