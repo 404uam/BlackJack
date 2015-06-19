@@ -15,7 +15,7 @@ public class Deck {
     public Deck()
     {
 
-        for(int j = 0; j < 6; j++) {
+        for(int j = 0; j < 1; j++) {
             for (int i = 1; i <= SUITS; i++) {
                 for (int c = 1; c <= SUIT_SIZE; c++) {
                     Card temp = new Card(c, i);

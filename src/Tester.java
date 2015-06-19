@@ -14,15 +14,15 @@ public class Tester {
             System.out.println(temp.getNumber() + " " + temp.getSuit());
         }
 */
-     /*   temp = deck.drawCard();
+        temp = deck.drawCard();
         System.out.println(temp.getNumber() + " " + temp.getSuit()+"\n");
-*/
+
         deck.shuffleDeck();
         deck.shuffleDeck();
         deck.shuffleDeck();
         deck.shuffleDeck();
 
-        for(int i = 0; i < 260;i++){
+        for(int i = deck.getSize(); i > 0;i--){
             temp = deck.drawCard();
             System.out.println(temp.getNumber() + " " + temp.getSuit());
         }
