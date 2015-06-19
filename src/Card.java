@@ -7,7 +7,23 @@ public class Card {
 
     public Card(Integer number,Integer suit)
     {
-        this.number = number.toString();
+        switch(number)
+        {
+            case 11:
+                this.number = "J";
+                break;
+            case 12:
+                this.number = "Q";
+                break;
+            case 13:
+                this.number = "K";
+                break;
+            case 1:
+                this.number = "A";
+                break;
+            default:
+                this.number = number.toString();
+        };
 
         if(suit == 1)
         {

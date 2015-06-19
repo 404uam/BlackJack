@@ -6,11 +6,21 @@ public class Tester {
     public static void main(String[] args0)
     {
         printMenu();
-        Deck deck = new Deck();
+        Deck deck = Deck.getInstance();
+        Hand hand = new Hand();
         Card temp;
         Card temp2;
         Card temp3;
 
+        temp = deck.drawCard();
+        System.out.println(temp.getNumber() + " " + temp.getSuit());
+
+        deck.shuffleDeck();
+        temp = deck.peek();
+        System.out.println(temp.getNumber() + " " + temp.getSuit());
+
+        hand.testInstance();;
+/*
         deck.shuffleDeck();
         deck.shuffleDeck();
         deck.shuffleDeck();
@@ -22,7 +32,7 @@ public class Tester {
         System.out.println(temp.getNumber() + " " + temp.getSuit());
         }
         */
-
+/*
         temp = deck.drawCard();
         System.out.println(temp.getNumber() + " " + temp.getSuit()+"\n");
 
@@ -37,7 +47,7 @@ public class Tester {
         System.out.print(deck.contains(temp2));
         System.out.print(deck.contains(temp3));
 
-
+*/
 
     }
 

@@ -8,6 +8,7 @@ public class Deck {
 
     private Stack <Card> deck = new <Card> Stack();
     private Stack <Card> burn = new <Card> Stack();
+    private static Deck instance = null;
     private int DECK_SIZE = 52;
     private int SUIT_SIZE = 13;
     private int SUITS     = 4;
@@ -25,6 +26,13 @@ public class Deck {
             }
         }
 
+    }
+
+    public static Deck getInstance(){
+        if(instance == null){
+            instance = new Deck();
+        }
+        return instance;
     }
 
     public Card drawCard()
@@ -79,5 +87,9 @@ public class Deck {
         return deck.contains(e);
     }
 
-
+    // This function is for debugging / testing @TODO REMOVE FOR FINAL PRODUCT
+    public Card peek()
+    {
+        return deck.peek();
+    }
 }
