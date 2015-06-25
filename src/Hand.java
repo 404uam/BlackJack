@@ -19,6 +19,12 @@ public class Hand {
         Card newCard = deck.drawCard();
         boolean bust = false;
 
+        computeValue();
+
+        if(value > 21 && checkAce())
+        {
+
+        }
 
 
         return bust;
@@ -46,6 +52,10 @@ public class Hand {
     private boolean checkAce()
     {
         boolean hasAce = false;
+        Card AceOfSpades = new Card(1,4);
+        Card AceOfHearts = new Card(1,3);
+        Card AceOfClubs = new Card(1,2);
+        Card AceOfDiamonds = new Card(1,1);
 
         //if(hand.contains(I CANT THINK))
         return hasAce;

@@ -7,7 +7,7 @@ import java.util.Stack;
 public class Deck {
 
     private Stack <Card> deck = new <Card> Stack();
-    private Stack <Card> burn = new <Card> Stack();
+    private Stack <Card> inPlay = new <Card> Stack();
     private static Deck instance = null;
     private int DECK_SIZE = 52;
     private int SUIT_SIZE = 13;
@@ -38,7 +38,7 @@ public class Deck {
     public Card drawCard()
     {
         Card temp = deck.pop();
-        burn.add(temp);             //Why am i burning the card right as I draw.. Good idea or no?
+        inPlay.add(temp);             //Why am i burning the card right as I draw.. Good idea or no?
         return temp;
     }
 
@@ -62,16 +62,19 @@ public class Deck {
     /**
      * @name restockDeck
      * @author Louis
-     * Takes all the cards in the stack which is the burn pile and adds them back to the main deck
+     * Takes all the cards in the stack which is the inPlay pile and adds them back to the main deck
      * Then shuffles main deck
      *
      */
     public void restockDeck()
     {
-        for(int i = burn.size(); i > 0; i--)
+        for(int i = inPlay.size(); i > 0; i--)
         {
-            deck.add(burn.pop());
+            deck.add(inPlay.pop());
         }
+        shuffleDeck();
+        shuffleDeck();
+        shuffleDeck();
         shuffleDeck();
     }
 

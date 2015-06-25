@@ -12,42 +12,7 @@ public class Tester {
         Card temp2;
         Card temp3;
 
-        temp = deck.drawCard();
-        System.out.println(temp.getNumber() + " " + temp.getSuit());
 
-        deck.shuffleDeck();
-        temp = deck.peek();
-        System.out.println(temp.getNumber() + " " + temp.getSuit());
-
-        hand.testInstance();;
-/*
-        deck.shuffleDeck();
-        deck.shuffleDeck();
-        deck.shuffleDeck();
-        deck.shuffleDeck();
-
-        /*
-        for(int i = deck.getSize(); i > 0;i--){
-        temp = deck.drawCard();
-        System.out.println(temp.getNumber() + " " + temp.getSuit());
-        }
-        */
-/*
-        temp = deck.drawCard();
-        System.out.println(temp.getNumber() + " " + temp.getSuit()+"\n");
-
-        temp2 = deck.drawCard();
-        System.out.println(temp2.getNumber() + " " + temp2.getSuit()+"\n");
-
-        temp3 = deck.drawCard();
-        System.out.println(temp3.getNumber() + " " + temp3.getSuit()+"\n");
-
-        deck.restockDeck();
-        System.out.print(deck.contains(temp));
-        System.out.print(deck.contains(temp2));
-        System.out.print(deck.contains(temp3));
-
-*/
 
     }
 
@@ -59,4 +24,49 @@ public class Tester {
                            "**********************");
     }
 
+    public static void testInstance(Card temp,Deck deck,Hand hand)
+    {
+        temp = deck.drawCard();
+        System.out.println(temp.getNumber() + " " + temp.getSuit());
+
+        deck.shuffleDeck();
+        temp = deck.peek();
+        System.out.println(temp.getNumber() + " " + temp.getSuit());
+
+        hand.testInstance();;
+
+    }
+
+    public static void printCardsAfterShuffle(Deck deck, Card temp)
+    {
+
+        deck.shuffleDeck();
+        deck.shuffleDeck();
+        deck.shuffleDeck();
+        deck.shuffleDeck();
+
+
+        for(int i = deck.getSize(); i > 0;i--){
+        temp = deck.drawCard();
+        System.out.println(temp.getNumber() + " " + temp.getSuit());
+        }
+
+    }
+
+    public static void testRestock(Deck deck, Card temp)
+    {
+
+        deck.shuffleDeck();
+        deck.shuffleDeck();
+        deck.shuffleDeck();
+        deck.shuffleDeck();
+
+
+        for(int i = deck.getSize(); i > 0;i--){
+        temp = deck.drawCard();
+        System.out.println(temp.getNumber() + " " + temp.getSuit());
+        }
+
+    }
 }
+
