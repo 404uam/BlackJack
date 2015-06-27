@@ -45,6 +45,7 @@ public class Hand {
     }
     public int getValue()
     {
+        computeValue();
         return value;
     }
 
@@ -66,7 +67,7 @@ public class Hand {
             value = 11;
         }
         else
-            value = e.getNumber().charAt(0);
+            value = e.getNumber().charAt(0)-48;
 
 
         return value;

@@ -14,6 +14,15 @@ public class Tester {
         deck.shuffleDeck();
         deck.shuffleDeck();
         deck.shuffleDeck();
+        deck.shuffleDeck();
+        deck.shuffleDeck();
+        deck.shuffleDeck();
+        deck.shuffleDeck();
+        deck.shuffleDeck();
+        deck.shuffleDeck();
+        deck.shuffleDeck();
+        deck.shuffleDeck();
+
 
         Hand hand = new Hand();
         Hand hand2 = new Hand();
