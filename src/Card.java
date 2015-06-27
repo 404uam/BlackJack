@@ -5,6 +5,8 @@ public class Card {
     private String number;
     private String suit;
 
+    private String card;
+
     public Card(Integer number,Integer suit)
     {
         switch(number)
@@ -27,7 +29,7 @@ public class Card {
 
         if(suit == 1)
         {
-            this.suit = "Diamond";
+            this.suit = "Diamonds";
         }
         else if(suit == 2)
         {
@@ -41,6 +43,8 @@ public class Card {
         {
             this.suit = "Spades";
         }
+
+        card = this.number +" "+ this.suit;
 
     }
 
@@ -59,5 +63,10 @@ public class Card {
 
     public void setNumber(String number) {
         this.number = number;
+    }
+
+    public String toString()
+    {
+        return card;
     }
 }

@@ -1,3 +1,5 @@
+import java.util.LinkedList;
+
 /**
  * Created by Louis on 6/17/2015.
  */
@@ -7,13 +9,31 @@ public class Tester {
     {
         printMenu();
         Deck deck = Deck.getInstance();
+
+        deck.shuffleDeck();
+        deck.shuffleDeck();
+        deck.shuffleDeck();
+        deck.shuffleDeck();
+
         Hand hand = new Hand();
-        Card temp;
-        Card temp2;
-        Card temp3;
+        Hand hand2 = new Hand();
+        Hand hand3 = new Hand();
+        Card temp = null;
+        Card temp2 = null;
+        Card temp3 = null;
+
+        hand.getStartCard();
+        hand2.getStartCard();
+        hand3.getStartCard();
+
+        testHand(hand);
+        testHand(hand2);
+        testHand(hand3);
 
 
 
+        //testInstance(temp,deck,hand);
+       // printCardsAfterShuffle(deck,temp);
     }
 
     public static void printMenu()
@@ -67,6 +87,18 @@ public class Tester {
         System.out.println(temp.getNumber() + " " + temp.getSuit());
         }
 
+    }
+
+    public static void testHand(Hand hand)
+    {
+        LinkedList<Card> cards = hand.getHand();
+
+        System.out.println(hand.getValue());
+        for(int i = 0; i < cards.size(); i ++)
+        {
+            System.out.print(" "+cards.get(i));
+        }
+        System.out.println();
     }
 }
 
