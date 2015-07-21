@@ -58,7 +58,7 @@ public class Hand {
     {
         int value;
 
-        if(e.getNumber().equals("J")||e.getNumber().equals("Q")||e.getNumber().equals("K"))
+        if(e.getNumber().equals("J")||e.getNumber().equals("Q")||e.getNumber().equals("K")||e.getNumber().equals("10"))
         {
             value = 10;
         }

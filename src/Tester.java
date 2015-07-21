@@ -42,14 +42,14 @@ public class Tester {
 
 
         //testInstance(temp,deck,hand);
-       // printCardsAfterShuffle(deck,temp);
+       //printCardsAfterShuffle(deck,temp);
     }
 
     public static void printMenu()
     {
-        System.out.println("******** MENU ********\n"+
-                           "1.      SHUFFLE       \n"+
-                           "2.       DEAL         \n"+
+        System.out.println("******** MENU ********\n" +
+                           "1.      SHUFFLE       \n" +
+                           "2.       DEAL         \n" +
                            "**********************");
     }
 
@@ -105,7 +105,7 @@ public class Tester {
         System.out.println(hand.getValue());
         for(int i = 0; i < cards.size(); i ++)
         {
-            System.out.print(" "+cards.get(i));
+            System.out.print(" " + cards.get(i));
         }
         System.out.println();
     }
